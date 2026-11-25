@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="영차">
+  <rect width="64" height="64" rx="16" fill="#0f4d42" />
+  <path d="M14 40c5 4 11 6 18 6s13-2 18-6" fill="none" stroke="#e2efe9" stroke-width="4" stroke-linecap="round" />
+  <path d="M32 14v22" stroke="#ffc73f" stroke-width="6" stroke-linecap="round" />
+  <path d="M22 24l10-10 10 10" fill="none" stroke="#ffc73f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

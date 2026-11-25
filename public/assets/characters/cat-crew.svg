@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="냥이대원">
+  <title>냥이대원 — 영차 구조대 캐릭터 (뼈대용 자체 제작 SVG)</title>
+  <circle cx="80" cy="80" r="78" fill="#E9EEF5" />
+  <circle cx="80" cy="80" r="70" fill="none" stroke="#D3DCE8" stroke-width="1.5" stroke-dasharray="3 6" />
+  <!-- 귀 -->
+  <path d="M44 74l6-30 26 18z" fill="#A9B6C4" stroke="#8A97A6" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M116 74l-6-30-26 18z" fill="#A9B6C4" stroke="#8A97A6" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M50 68l4-17 14 11z" fill="#F2C9C9" />
+  <path d="M110 68l-4-17-14 11z" fill="#F2C9C9" />
+  <!-- 얼굴 -->
+  <circle cx="80" cy="94" r="43" fill="#A9B6C4" stroke="#8A97A6" stroke-width="2.5" />
+  <!-- 이마 줄무늬 -->
+  <path d="M72 60l4 10M80 58v12M88 60l-4 10" stroke="#8A97A6" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+  <!-- 헤드셋(상담/관제 담당) -->
+  <path d="M34 88c0-25 20-44 46-44s46 19 46 44" fill="none" stroke="#0F4D42" stroke-width="7" stroke-linecap="round" />
+  <rect x="26" y="84" width="14" height="22" rx="7" fill="#0F4D42" />
+  <rect x="120" y="84" width="14" height="22" rx="7" fill="#0F4D42" />
+  <path d="M127 106c0 9-8 13-16 13" fill="none" stroke="#0F4D42" stroke-width="4" stroke-linecap="round" />
+  <circle cx="108" cy="119" r="4.5" fill="#FFC73F" />
+  <!-- 수염 -->
+  <path d="M46 100l-14-3M46 106l-14 2M114 100l14-3M114 106l14 2" stroke="#8A97A6" stroke-width="1.8" stroke-linecap="round" opacity="0.8" />
+  <!-- 표정 -->
+  <path d="M66 96c3 4 8 4 11 0M85 96c3 4 8 4 11 0" fill="none" stroke="#1E2A33" stroke-width="3" stroke-linecap="round" />
+  <path d="M80 104l-4 4h8z" fill="#E48B8B" />
+  <path d="M80 108c0 3-4 4-6 1M80 108c0 3 4 4 6 1" fill="none" stroke="#1E2A33" stroke-width="2.2" stroke-linecap="round" />
+</svg>

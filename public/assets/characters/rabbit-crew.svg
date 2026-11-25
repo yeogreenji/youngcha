@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="토끼대원">
+  <title>토끼대원 — 영차 구조대 캐릭터 (뼈대용 자체 제작 SVG)</title>
+  <circle cx="80" cy="80" r="78" fill="#E7F1EA" />
+  <circle cx="80" cy="80" r="70" fill="none" stroke="#CFE2D6" stroke-width="1.5" stroke-dasharray="3 6" />
+  <!-- 귀 (헬멧 뒤) -->
+  <g stroke="#D8CDBB" stroke-width="2.5">
+    <ellipse cx="60" cy="42" rx="10.5" ry="26" fill="#FDFBF5" transform="rotate(-9 60 42)" />
+    <ellipse cx="100" cy="42" rx="10.5" ry="26" fill="#FDFBF5" transform="rotate(9 100 42)" />
+  </g>
+  <ellipse cx="60" cy="42" rx="4.5" ry="16" fill="#F6C9C2" transform="rotate(-9 60 42)" />
+  <ellipse cx="100" cy="42" rx="4.5" ry="16" fill="#F6C9C2" transform="rotate(9 100 42)" />
+  <!-- 얼굴 -->
+  <circle cx="80" cy="94" r="42" fill="#FDFBF5" stroke="#D8CDBB" stroke-width="2.5" />
+  <!-- 안전 헬멧 -->
+  <path d="M40 90c0-24 18-42 40-42s40 18 40 42z" fill="#0F4D42" />
+  <path d="M40 90c0-24 18-42 40-42s40 18 40 42z" fill="#0F4D42" opacity="0.15" />
+  <rect x="34" y="88" width="92" height="9" rx="4.5" fill="#0A3A32" />
+  <rect x="66" y="71" width="28" height="11" rx="5.5" fill="#FFC73F" />
+  <circle cx="80" cy="76.5" r="3" fill="#FFF3D1" />
+  <!-- 표정 -->
+  <path d="M64 102c3 4 8 4 11 0M85 102c3 4 8 4 11 0" fill="none" stroke="#16201D" stroke-width="3" stroke-linecap="round" />
+  <path d="M74 112c2.4 3.2 9.6 3.2 12 0" fill="none" stroke="#16201D" stroke-width="2.6" stroke-linecap="round" />
+  <circle cx="58" cy="108" r="5" fill="#F6C9C2" opacity="0.75" />
+  <circle cx="102" cy="108" r="5" fill="#F6C9C2" opacity="0.75" />
+</svg>

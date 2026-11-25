@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="곰대원">
+  <title>곰대원 — 영차 구조대 캐릭터 (뼈대용 자체 제작 SVG)</title>
+  <circle cx="80" cy="80" r="78" fill="#F6EDE0" />
+  <circle cx="80" cy="80" r="70" fill="none" stroke="#E5D6C2" stroke-width="1.5" stroke-dasharray="3 6" />
+  <!-- 귀 -->
+  <circle cx="45" cy="66" r="14" fill="#C2915F" stroke="#A97B4C" stroke-width="2.5" />
+  <circle cx="115" cy="66" r="14" fill="#C2915F" stroke="#A97B4C" stroke-width="2.5" />
+  <circle cx="45" cy="66" r="6.5" fill="#E8C7A5" />
+  <circle cx="115" cy="66" r="6.5" fill="#E8C7A5" />
+  <!-- 얼굴 -->
+  <circle cx="80" cy="94" r="44" fill="#C2915F" stroke="#A97B4C" stroke-width="2.5" />
+  <!-- 헬멧 -->
+  <path d="M38 92c0-25 19-45 42-45s42 20 42 45z" fill="#FFC73F" />
+  <path d="M38 92c0-25 19-45 42-45s42 20 42 45z" fill="#FFFFFF" opacity="0.18" />
+  <rect x="32" y="90" width="96" height="10" rx="5" fill="#E8A800" />
+  <rect x="65" y="72" width="30" height="11" rx="5.5" fill="#0F4D42" />
+  <circle cx="80" cy="77.5" r="3" fill="#E7F1EA" />
+  <!-- 주둥이 -->
+  <ellipse cx="80" cy="108" rx="21" ry="15" fill="#F0DCC2" />
+  <ellipse cx="80" cy="101" rx="5" ry="3.6" fill="#5C4030" />
+  <!-- 표정 -->
+  <path d="M64 99c3 4 8 4 11 0M85 99c3 4 8 4 11 0" fill="none" stroke="#3B2A1E" stroke-width="3" stroke-linecap="round" />
+  <path d="M80 104v4M80 108c-3 3-7 2-8-1M80 108c3 3 7 2 8-1" fill="none" stroke="#5C4030" stroke-width="2.4" stroke-linecap="round" />
+</svg>

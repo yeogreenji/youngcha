@@ -1,0 +1,133 @@
+/* =============================================================================
+   영차 YOUNGCHA — 디자인 토큰 (단일 변경 지점)
+   -----------------------------------------------------------------------------
+   로렌(디자인)이 색감·폰트·모서리·그림자만 바꾸고 싶을 때 이 파일만 고치면 됩니다.
+   여기의 --yc-* 값을 바꾸면 index.css의 @theme inline을 통해 Tailwind 유틸
+   (bg-primary, text-ink, rounded-lg, shadow-card …)에 그대로 반영됩니다.
+   화면 코드에는 색상 코드를 직접 쓰지 않습니다. (docs/ASSET_GUIDE.md 참고)
+   ========================================================================== */
+
+:root {
+  /* ── 브랜드 ──────────────────────────────────────────────────────────────
+     구조대의 '안전한 헬멧 초록' + '영차 구호의 노랑'. 차분한 바탕 위에
+     응원의 온도만 노랑으로 얹는 구성입니다. */
+  --yc-primary: #0f4d42;
+  --yc-primary-strong: #0a3a32;
+  --yc-primary-soft: #e2efe9;
+  --yc-primary-line: #bcd8cd;
+
+  --yc-accent: #ffc73f;
+  --yc-accent-strong: #e8a800;
+  --yc-accent-ink: #7a5a00;
+  --yc-accent-soft: #fff3d1;
+
+  /* ── 바탕/글자 ───────────────────────────────────────────────────────── */
+  --yc-paper: #f6f2e9;
+  --yc-surface: #ffffff;
+  --yc-surface-2: #fbf8f1;
+  --yc-ink: #16201d;
+  --yc-ink-soft: #4a5752;
+  --yc-ink-muted: #7b8781;
+  --yc-line: #e3ddd0;
+  --yc-line-strong: #cfc7b6;
+
+  /* ── 신호(주식 나침반) ──────────────────────────────────────────────────
+     '매수/매도'를 명령처럼 보이지 않게, 검토·관찰의 어조를 담은 색입니다. */
+  --yc-signal-buy: #0e7490;
+  --yc-signal-buy-soft: #e0f2f6;
+  --yc-signal-wait: #b45309;
+  --yc-signal-wait-soft: #fdf0dd;
+  --yc-signal-sell: #6d28d9;
+  --yc-signal-sell-soft: #f1e9fe;
+  --yc-signal-heated: #be123c;
+  --yc-signal-heated-soft: #fde8ed;
+  --yc-signal-crisis: #991b1b;
+  --yc-signal-crisis-soft: #fbe5e5;
+  --yc-signal-recover: #1d4ed8;
+  --yc-signal-recover-soft: #e6ecfd;
+  --yc-signal-hold: #5d6b66;
+  --yc-signal-hold-soft: #eef1ee;
+
+  /* ── 상태 ───────────────────────────────────────────────────────────── */
+  --yc-success: #15803d;
+  --yc-success-soft: #e5f4e9;
+  --yc-danger: #b91c1c;
+  --yc-danger-soft: #fdeaea;
+
+  /* ── 글꼴 ───────────────────────────────────────────────────────────────
+     별도 웹폰트 다운로드 없이 기기 기본 한글 글꼴을 씁니다(무료·오프라인).
+     Pretendard를 쓰고 싶으면 앞에 이름만 추가하면 됩니다. */
+  --yc-font-sans: 'Pretendard', 'Pretendard Variable', -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', 'Helvetica Neue', Arial, sans-serif;
+  --yc-font-mono: 'SFMono-Regular', 'JetBrains Mono', 'D2Coding', ui-monospace, monospace;
+
+  /* ── 모서리 ─────────────────────────────────────────────────────────── */
+  --yc-radius-sm: 8px;
+  --yc-radius-md: 12px;
+  --yc-radius-lg: 18px;
+  --yc-radius-xl: 26px;
+  --yc-radius-pill: 999px;
+
+  /* ── 그림자 ─────────────────────────────────────────────────────────── */
+  --yc-shadow-card: 0 1px 2px rgba(22, 32, 29, 0.05), 0 8px 24px -18px rgba(22, 32, 29, 0.35);
+  --yc-shadow-lift: 0 2px 4px rgba(22, 32, 29, 0.06), 0 18px 40px -24px rgba(15, 77, 66, 0.45);
+
+  /* ── 레이아웃 ───────────────────────────────────────────────────────── */
+  --yc-shell-max: 1240px;
+  --yc-header-h: 64px;
+  --yc-bottom-nav-h: 64px;
+}
+
+/* 토큰 → Tailwind 유틸 연결. 로렌은 위 값만 바꾸면 됩니다. */
+@theme inline {
+  --color-primary: var(--yc-primary);
+  --color-primary-strong: var(--yc-primary-strong);
+  --color-primary-soft: var(--yc-primary-soft);
+  --color-primary-line: var(--yc-primary-line);
+
+  --color-accent: var(--yc-accent);
+  --color-accent-strong: var(--yc-accent-strong);
+  --color-accent-ink: var(--yc-accent-ink);
+  --color-accent-soft: var(--yc-accent-soft);
+
+  --color-paper: var(--yc-paper);
+  --color-surface: var(--yc-surface);
+  --color-surface-2: var(--yc-surface-2);
+  --color-ink: var(--yc-ink);
+  --color-ink-soft: var(--yc-ink-soft);
+  --color-ink-muted: var(--yc-ink-muted);
+  --color-line: var(--yc-line);
+  --color-line-strong: var(--yc-line-strong);
+
+  --color-signal-buy: var(--yc-signal-buy);
+  --color-signal-buy-soft: var(--yc-signal-buy-soft);
+  --color-signal-wait: var(--yc-signal-wait);
+  --color-signal-wait-soft: var(--yc-signal-wait-soft);
+  --color-signal-sell: var(--yc-signal-sell);
+  --color-signal-sell-soft: var(--yc-signal-sell-soft);
+  --color-signal-heated: var(--yc-signal-heated);
+  --color-signal-heated-soft: var(--yc-signal-heated-soft);
+  --color-signal-crisis: var(--yc-signal-crisis);
+  --color-signal-crisis-soft: var(--yc-signal-crisis-soft);
+  --color-signal-recover: var(--yc-signal-recover);
+  --color-signal-recover-soft: var(--yc-signal-recover-soft);
+  --color-signal-hold: var(--yc-signal-hold);
+  --color-signal-hold-soft: var(--yc-signal-hold-soft);
+
+  --color-success: var(--yc-success);
+  --color-success-soft: var(--yc-success-soft);
+  --color-danger: var(--yc-danger);
+  --color-danger-soft: var(--yc-danger-soft);
+
+  --font-sans: var(--yc-font-sans);
+  --font-mono: var(--yc-font-mono);
+
+  --radius-sm: var(--yc-radius-sm);
+  --radius-md: var(--yc-radius-md);
+  --radius-lg: var(--yc-radius-lg);
+  --radius-xl: var(--yc-radius-xl);
+  --radius-pill: var(--yc-radius-pill);
+
+  --shadow-card: var(--yc-shadow-card);
+  --shadow-lift: var(--yc-shadow-lift);
+}

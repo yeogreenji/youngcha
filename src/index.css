@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+@import './styles/tokens.css';
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--yc-paper);
+    color: var(--yc-ink);
+    font-family: var(--yc-font-sans);
+    font-feature-settings: 'tnum' 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--yc-accent-soft);
+    color: var(--yc-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--yc-primary);
+    outline-offset: 2px;
+  }
+
+  /* 스크롤바는 콘텐츠를 방해하지 않을 만큼만 */
+  .yc-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .yc-scroll::-webkit-scrollbar-thumb {
+    background: var(--yc-line-strong);
+    border-radius: 999px;
+  }
+}
+
+@layer utilities {
+  /* 모바일 하단 탭바가 콘텐츠를 가리지 않도록 */
+  .yc-safe-bottom {
+    padding-bottom: calc(var(--yc-bottom-nav-h) + env(safe-area-inset-bottom));
+  }
+
+  /* 응원 헬기가 지나가는 연출 (뼈대 단계: CSS만으로 동작) */
+  .yc-heli-fly {
+    animation: yc-heli 1.8s ease-in-out forwards;
+  }
+
+  .yc-rise {
+    animation: yc-rise 0.45s ease-out both;
+  }
+}
+
+@keyframes yc-heli {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, 10px) rotate(-6deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(220px, -34px) rotate(4deg);
+  }
+}
+
+@keyframes yc-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yc-heli-fly,
+  .yc-rise {
+    animation: none;
+  }
+}

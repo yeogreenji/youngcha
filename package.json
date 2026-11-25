@@ -1,0 +1,30 @@
+{
+  "name": "youngcha",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "영차 YOUNGCHA — 종목별 구조대(주주 단체 채팅)와 쉬운 말 주식 나침반을 한 앱에 담은 서비스의 뼈대",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.api.json",
+    "typecheck:app": "tsc --noEmit",
+    "typecheck:api": "tsc -p tsconfig.api.json",
+    "verify": "python3 scripts/verify.py"
+  },
+  "dependencies": {
+    "lucide-react": "^0.544.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5"
+  }
+}
