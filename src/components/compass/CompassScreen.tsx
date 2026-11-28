@@ -111,6 +111,28 @@ export function CompassScreen({
             </p>
           </section>
 
+          <section aria-labelledby="official-title">
+            <SectionTitle><span id="official-title">{t('official.title')}</span></SectionTitle>
+            <Card className="p-3">
+              <p className="text-[11px] text-ink-muted">{t('official.desc')}</p>
+              <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                <a href="https://dart.fss.or.kr/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-2 rounded-md border border-line p-2 text-[12px] font-bold text-primary">{t('official.kr')}<ArrowUpRight className="size-4 shrink-0" /></a>
+                <a href="https://www.sec.gov/edgar/search/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-2 rounded-md border border-line p-2 text-[12px] font-bold text-primary">{t('official.us')}<ArrowUpRight className="size-4 shrink-0" /></a>
+              </div>
+            </Card>
+          </section>
+          <section aria-labelledby="school-title">
+            <SectionTitle><span id="school-title">{t('school.title')}</span></SectionTitle>
+            <Card className="p-3">
+              {(['avg', 'report', 'risk'] as const).map(topic => (
+                <details key={topic} className="border-b border-line py-2 last:border-b-0">
+                  <summary className="cursor-pointer text-[12px] font-bold text-primary">{t(`school.${topic}.title`)}</summary>
+                  <p className="mt-1 text-[11px] leading-relaxed text-ink-soft">{t(`school.${topic}.body`)}</p>
+                </details>
+              ))}
+            </Card>
+          </section>
+
           {/* 오늘의 신호 */}
           <section aria-labelledby="signals-title">
             <SectionTitle
