@@ -80,3 +80,27 @@
 - 오프라인 모임(주주 밋업) — 안전 검증 전까지 보류
 - AI 대원(쉬운 말로 질문 받아 주는 캐릭터) — 실제 이용자와 명확히 구분 표시 전제
 - 실적 시즌 "구조대 야간 근무" 테마(밤 시간대 응원 이벤트)
+
+
+## 2026-11-28 로렌 콘텐츠 확장안 — 승인·구현 상태 구분
+
+기존 요구사항 유지. 아래는 추가 후보이며 신규 12공간을 일괄 구현하지 않는다.
+
+| ID | 추가 범위 | 우선순위 / 완료 조건 |
+| --- | --- | --- |
+| YC-01 | 종목별 구조타워, 층별 캐릭터, 내 대원실 | P2 / 비공개 기본, 평단·보유량 미입력 허용, 실제 이용자 구분 |
+| YC-02 | 구조 완료식·인증서·공유 카드 | P2 / 가격 회복과 매도·실현손익 구분, 공유 전 미리보기 |
+| YC-03 | 미국장 야간 구조대·대원 휴게소·휴장일 이벤트 | P3 / 기존 채팅 재사용, 초기 방 분산 방지 |
+| YC-04 | 3분 주식학교 | P2 / 기초 3개 카드 코드 반영, 교육 콘텐츠 확장·검수 필요 |
+| YC-05 | 증시 기상청·세 줄 뉴스·공시 번역 | P2 / 공식 출처·시각·지연·결측 표시, 전망과 사실 구분 |
+| YC-06 | 비공개 구조일지·투자 복기·개인 도구 | P2 / 추가 매수 가정 계산기 코드 반영, 기록은 별도 |
+| YC-07 | 출처 확인·상반된 근거·오류 정정 | P1 / 검증 불가 시 판단 보류 |
+| YC-08 | 이미지 공유·신고·차단·스팸 및 리딩방 대응 | P1(공개 기능 해당 시) / 이미지 EXIF 제거 검토, 접근 제어, 운영 정책, 두 계정 검증 |
+| YC-09 | 자체 캐릭터 6 NPC·이모티콘·시즌 테마·보급소 | P3 / 기존 4종 보존, 신규 디자인 승인 후 적용 |
+| YC-10 | 중앙본부·투자관제·멘탈 회복·명예의 전당·주식학교·공원·축제광장 등 12공간 | P3 / 사용자 승인 후 단계별 검증, 핵심 메뉴 직접 접근 |
+| YC-11 | 공식 공시 링크(데이터 미연결 시 대안) | 코드 반영 / 실제 API는 별도 |
+| YC-12 | 금융 데이터·호스팅 상업 이용권·유료 분석 규제 | P1 / 계약·법률 검토 없이 상업 운영 금지 |
+
+경쟁 조사: 토스증권 [커뮤니티 약관](https://corp.tossinvest.com/ko/terms/v2?id=51), Stocktwits [ticker page](https://help.stocktwits.com/c/navigating-the-platform/navigating-the-platform/ticker-page), [watchlist](https://help.stocktwits.com/c/key-features-of-stocktwits/key-features-of-stocktwits/using-your-watchlist). 채팅/관심/뉴스만으로 독자성을 주장하지 않는다.
+데이터 후보: [OpenDART](https://opendart.fss.or.kr/intro/main.do), [이용약관](https://opendart.fss.or.kr/intro/terms.do), [SEC EDGAR API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), [SEC Fair Access](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data). 공시는 시세와 별개이며, 재배포·상업 이용권은 별도 확인.
+[Vercel Hobby](https://vercel.com/docs/plans/hobby)는 개인·비상업용. 비용 0원 시제품과 상업 운영 구분. 유료 종목 분석/양방향 자문은 금융 법률 검토 전 보류.
