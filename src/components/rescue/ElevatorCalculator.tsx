@@ -3,6 +3,7 @@ import { ArrowDownUp, Calculator, Lock, RotateCcw, Wand2 } from 'lucide-react';
 import type { Crew } from '../../types';
 import { calculateElevator, elevatorPosition, floorOf } from '../../lib/elevator';
 import { formatMoney, formatPercent, parseNumber } from '../../lib/format';
+import { calculateScenario } from '../../lib/scenario';
 import { useI18n } from '../../i18n';
 import { CharacterAvatar } from '../ui/CharacterAvatar';
 
@@ -17,6 +18,8 @@ export function ElevatorCalculator({ crew, mindGuard }: { crew: Crew; mindGuard:
   const [sharesInput, setSharesInput] = useState('');
   const [currentInput, setCurrentInput] = useState('');
   const [targetInput, setTargetInput] = useState('');
+  const [scenarioPrice, setScenarioPrice] = useState('');
+  const [scenarioQuantity, setScenarioQuantity] = useState('');
 
   const avgPrice = parseNumber(avgInput);
   const shares = parseNumber(sharesInput);
@@ -30,10 +33,11 @@ export function ElevatorCalculator({ crew, mindGuard }: { crew: Crew; mindGuard:
     (targetInput.trim() !== '' && (targetPrice === null || targetPrice <= 0));
 
   const result = useMemo(
-    () => calculateElevator({ avgPrice, shares, currentPrice, targetPrice, floorUnit: crew.floorUnit }),
-    [avgPrice, shares, currentPrice, targetPrice, crew.floorUnit],
+    () => hasInvalid ? null : calculateElevator({ avgPrice, shares, currentPrice, targetPrice, floorUnit: crew.floorUnit }),
+    [hasInvalid, avgPrice, shares, currentPrice, targetPrice, crew.floorUnit],
   );
 
+  const scenario = calculateScenario(avgPrice, shares, parseNumber(scenarioPrice), parseNumber(scenarioQuantity));
   const position = result ? elevatorPosition(currentPrice ?? 0, avgPrice ?? 1) : 0;
 
   const fillSample = () => {
@@ -54,6 +58,8 @@ export function ElevatorCalculator({ crew, mindGuard }: { crew: Crew; mindGuard:
     setSharesInput('');
     setCurrentInput('');
     setTargetInput('');
+    setScenarioPrice('');
+    setScenarioQuantity('');
   };
 
   const unitLabel = formatMoney(crew.floorUnit, crew.currency, lang);
@@ -106,6 +112,7 @@ export function ElevatorCalculator({ crew, mindGuard }: { crew: Crew; mindGuard:
       <div className="mt-2.5 grid grid-cols-2 gap-2">
         {field('calc-avg', t('calc.avg'), avgInput, setAvgInput, { testId: 'calc-avg' })}
         {field('calc-shares', t('calc.shares'), sharesInput, setSharesInput, {
+          optional: true,
           testId: 'calc-shares',
           suffix: t('calc.sharesUnit'),
         })}
@@ -245,10 +252,28 @@ export function ElevatorCalculator({ crew, mindGuard }: { crew: Crew; mindGuard:
               </div>
             </div>
 
+            {shares === null && <p className="mt-1.5 text-[10px] text-ink-soft">{t('calc.quantityAssumed')}</p>}
             <p className="mt-1.5 text-[9.5px] leading-relaxed text-ink-muted">{t('calc.note')}</p>
           </>
         )}
       </div>
+      <details className="mt-3 rounded-md border border-line bg-surface-2 p-2.5">
+        <summary className="cursor-pointer text-[12px] font-bold text-primary">{t('scenario.title')}</summary>
+        <p className="mt-1 text-[10.5px] text-ink-muted">{t('scenario.desc')}</p>
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          {field('scenario-price', t('scenario.price'), scenarioPrice, setScenarioPrice, { testId: 'scenario-price' })}
+          {field('scenario-qty', t('scenario.quantity'), scenarioQuantity, setScenarioQuantity, { testId: 'scenario-qty', suffix: t('calc.sharesUnit') })}
+        </div>
+        <div className="mt-2 rounded-md bg-surface p-2 text-[11px]" aria-live="polite" data-testid="scenario-result">
+          {mindGuard ? <p>{t('calc.mindGuardOn')}</p> : scenario ? (
+            <dl className="space-y-1">
+              <div className="flex justify-between gap-2"><dt>{t('scenario.average')}</dt><dd className="font-black text-primary tabular-nums">{formatMoney(scenario.average, crew.currency, lang)}</dd></div>
+              <div className="flex justify-between gap-2"><dt>{t('scenario.cash')}</dt><dd className="font-bold tabular-nums">{formatMoney(scenario.cash, crew.currency, lang)}</dd></div>
+            </dl>
+          ) : <p className="text-ink-muted">{t('scenario.need')}</p>}
+        </div>
+        <p className="mt-1 text-[10px] text-ink-muted">{t('scenario.note')}</p>
+      </details>
     </div>
   );
 }
