@@ -29,9 +29,9 @@ export function formatPercent(value: number): string {
 
 /** '21,400' / '21400' / '21,400원' → 21400. 비었거나 숫자가 없으면 null */
 export function parseNumber(input: string): number | null {
-  const cleaned = input.replace(/[^\d.-]/g, '');
-  if (!cleaned) return null;
-  const value = Number(cleaned);
+  const cleaned = input.trim().replace(/(?:원|주|USD|KRW|달러)$/i, '').trim();
+  if (!/^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$|^-?\.\d+$/.test(cleaned)) return null;
+  const value = Number(cleaned.replace(/,/g, ''));
   return Number.isFinite(value) ? value : null;
 }
 
